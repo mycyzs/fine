@@ -1,0 +1,18 @@
+<div>
+    <header>
+        主机管理
+    </header>
+    <fieldset>
+        <legend>查询条件</legend>
+        <div class="fieldset_box">
+            <div><label>ip：</label><input type="text" ng-model="filterObj.ip"><button class="btn btn-sm btn-primary" style="margin-left: 20px" ng-click="search()">搜索</button></div>
+            <div class="right_box">
+                <button  class="btn btn-sm btn-info" ng-click="add()" style="margin-left: 10px">添加主机</button>
+            </div>
+            <div class="right_box">
+
+            </div>
+        </div>
+    </fieldset>
+    <div rgtable="table_option"></div>
+</div>

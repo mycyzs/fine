@@ -1,0 +1,64 @@
+<div>
+    <div dragable dialog-title="{{ title }}"></div>
+    <div style="width: 100%;padding: 30px 20px 20px 30px;">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">标题：</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" ng-model="args.title" ng-disabled="args.is_show">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">备注：</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" ng-model="args.tip"  ng-disabled="args.is_show">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">内容：</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" ng-model="args.content"  ng-disabled="args.is_show">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group" ng-if="!args.is_show">
+                <label class="col-sm-3 control-label">业务ID：</label>
+                <div class="col-sm-8">
+                    <select style="width: 100%;" ng-options="i.bk_biz_id as i.bk_biz_name for i in biz_list" ng-model="args.bk_biz_id"></select>
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group" ng-if="args.is_show">
+                <label class="col-sm-3 control-label">业务ID：</label>
+                <div class="col-sm-8">
+                    <input ng-model="args.bk_biz_name" class="form-control" type="text" ng-disabled="true">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group"  ng-if="!args.is_show">
+                <label class="col-sm-3 control-label">上传图片：</label>
+                <div class="col-sm-8">
+                    <input id="file" type="file" style="width: 100%">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+            <div class="form-group"  ng-if="args.is_show">
+                <label class="col-sm-3 control-label">图片：</label>
+                <div class="col-sm-8">
+                    <img src="{{ args.image_base64 }}" style="height: 50px">
+                </div>
+                <span class="text-danger mt5 fl">*</span>
+            </div>
+        </div>
+        <div style="text-align: center;margin-top: 10px;" ng-if="!args.is_show">
+            <button class="btn btn-sm btn-info" ng-click="confirm()">
+                保存
+            </button>
+            <button style="margin-left: 20px;" class="btn btn-sm btn-message" ng-click="cancel()">
+                取消
+            </button>
+        </div>
+    </div>
+</div>

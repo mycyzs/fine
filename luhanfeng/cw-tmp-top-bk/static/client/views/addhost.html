@@ -1,0 +1,41 @@
+<div class="host-div">
+    <div dragable dialog-title="{{ title }}"></div>
+    <div class="my-wid">
+        <div class="my-top my-dis">
+            <div class="task-div ip-div">
+            <lable>ip地址:</lable>
+            <input type="text" ng-model="args.addr_ip">
+            </div>
+            <div class="task-div ip-div1">
+            <button ng-click="search_ip()">查询</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-task1 my-top">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="thead_ck" ng-click="check()"></th>
+                    <th>ip地址</th>
+                    <th>生命周期</th>
+                    <th>云区域</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in hostList">
+                    <th><input type="checkbox" value="{{ i.id }}" name="sun_ck" ng-click="check_sum()"></th>
+                    <th>{{ i.ip }}</th>
+                    <th>{{ i.life_time }}</th>
+                    <th>{{ i.cloud }}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="add-task my-center">
+        <button class="my-right" ng-click="confirm()">确认</button>
+        <button ng-click="cancel()">取消</button>
+    </div>
+
+</div>

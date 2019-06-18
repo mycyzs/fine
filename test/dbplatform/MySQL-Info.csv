@@ -1,0 +1,7 @@
+系统名,系统简称,所属产品线,集群名,实例名,IP地址,端口,主从角色,数据库版本,安装目录,参数路径,备份路径,是否只读
+test,te,da,test3,10.230.46.164:3319,10.230.46.164,3319,Slave,5.7.20-log,/usr/local/mysql-5.7.20-linux-glibc2.12-x86_64/,/opt/mysql3319/my.cnf,/backup,False
+test1,test1,da,未分配(test1),10.230.46.157:3313,10.230.46.157,3313,Slave,5.7.22-log,/usr/local/mysql-5.7.22-linux-glibc2.12-x86_64/,User Name not exist ,/backup,False
+dhadahjadada,ds,da,dhadahjadadaclu2,10.230.46.142:3313,10.230.46.142,3313,Master,5.7.22-log,/usr/local/mysql-5.7.22-linux-glibc2.12-x86_64/,User Name not exist ,/backup,False
+dhadahjadada,ds,da,dhadahjadadaclu2,10.230.46.164:3325,10.230.46.164,3325,Slave,5.7.20-log,/usr/local/mysql-5.7.20-linux-glibc2.12-x86_64/,/opt/mysql3325/my.cnf,,False
+dhadahjadada,ds,da,dhadahjadadaclu1,10.230.46.142:3310,10.230.46.142,3310,Master,5.7.22-log,/usr/local/mysql-5.7.22-linux-glibc2.12-x86_64/,/opt/mysql3310/my.cnf,/backup,False
+dhadahjadada,ds,da,dhadahjadadaclu1,10.230.46.164:3320,10.230.46.164,3320,Slave,5.7.20-log,/usr/local/mysql-5.7.20-linux-glibc2.12-x86_64/,/opt/mysql3320/my.cnf,,False

@@ -1,0 +1,38 @@
+<div class="my-home">
+    <fieldset class="fieldsetName">
+        <legend style="">查询条件</legend>
+        <div class="container-fluid">
+            <div class="task-div">
+                <label class="task-div lable-st">任务名称：</label>
+                <input type="text" ng-model="args.task_name"
+                       class="form-control task-div width-task" placeholder="请输入任务名称"/>
+            </div>
+            <div class="task-div comte">
+                <label class="task-div lable-st">执行类型：</label>
+                <input type="text" cw-selectstr2="templateOption" ng-model="args.selected_id"
+                       class="task-div width-task" />
+            </div>
+
+            <div class="task-div comte">
+                <label class="task-div lable-st">报告邮箱：</label>
+                <input type="text" ng-model="args.email"
+                       class="form-control task-div width-task" placeholder="请输入邮箱"/>
+            </div>
+            <div class="task-div comte">
+                <label class="task-div lable-st">平台：</label>
+                <input type="text" ng-model="args.platform"
+                       class="form-control task-div width-task" placeholder="请输入平台"/>
+            </div>
+
+            <div class="task-div comte2">
+                <button ng-click="search_task_info()" class="btn btn-sm btn-deppon-primary">查询</button>
+            </div>
+
+            <div class="task-div comte2">
+                <button ui-sref="add_task" class="btn btn-sm btn-deppon-warning">新增任务</button>
+            </div>
+
+        </div>
+    </fieldset>
+    <div cw-adaptbody="100" ng-grid="gridOption" class="my-form"></div>
+</div>

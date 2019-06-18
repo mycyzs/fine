@@ -1,0 +1,941 @@
+/* Primary Button Style */
+/**{*/
+/*font-family: "Microsoft YaHei", "PingFang SC", Arial, "sans-serif" !important*/
+/*}*/
+.btn-deppon-primary {
+    color: #fff;
+    background-color: #444a7c;
+    border: solid 1.5px #444a7c;
+    border-radius: 6%;
+}
+
+.btn-deppon-primary:visited {
+    color: white;
+}
+
+.btn-deppon-primary:hover,
+.btn-deppon-primary:focus,
+.btn-deppon-primary.focus,
+.btn-deppon-primary:active,
+.btn-deppon-primary.active,
+.open > .dropdown-toggle.btn-deppon-primary {
+    color: #fff;
+    background-color: #444a7c;
+    border: solid 1.5px #444a7c;
+    border-radius: 6%;
+}
+
+.btn-deppon-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #444a7c;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0 *100);
+    filter: alpha(opacity=0 *100);
+    -webkit-transform: scale3d(0.7, 1, 1);
+    -moz-transform: scale3d(0.7, 1, 1);
+    -o-transform: scale3d(0.7, 1, 1);
+    -ms-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: transform 0.4s, opacity 0.4s;
+    -moz-transition: transform 0.4s, opacity 0.4s;
+    -o-transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btn-deppon-primary,
+.btn-deppon-primary::before {
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.btn-deppon-primary:hover::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.btn-deppon-primary:active,
+.btn-deppon-primary.active,
+.open > .dropdown-toggle.btn-deppon-primary {
+    background-image: none;
+    border-color: #444a7c;
+}
+
+.btn-deppon-primary:active::before,
+.btn-deppon-primary.active::before,
+.open > .dropdown-toggle.btn-deppon-primary::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #444a7c;
+}
+
+.btn-deppon-primary:active:hover,
+.btn-deppon-primary.active:hover,
+.open > .dropdown-toggle.btn-deppon-primary:hover,
+.btn-deppon-primary:active:focus,
+.btn-deppon-primary.active:focus,
+.open > .dropdown-toggle.btn-deppon-primary:focus,
+.btn-deppon-primary:active.focus,
+.btn-deppon-primary.active.focus,
+.open > .dropdown-toggle.btn-deppon-primary.focus {
+    color: white;
+    background-color: #444a7c;
+    border-color: #444a7c;
+}
+
+.btn-deppon-primary.disabled::before,
+.btn-deppon-primary[disabled]::before {
+    z-index: 1;
+}
+
+.btn-deppon-primary.disabled,
+.btn-deppon-primary[disabled],
+fieldset[disabled] .btn-deppon-primary,
+.btn-deppon-primary.disabled:hover,
+.btn-deppon-primary[disabled]:hover,
+fieldset[disabled] .btn-deppon-primary:hover,
+.btn-deppon-primary.disabled:focus,
+.btn-deppon-primary[disabled]:focus,
+fieldset[disabled] .btn-deppon-primary:focus,
+.btn-deppon-primary.disabled.focus,
+.btn-deppon-primary[disabled].focus,
+fieldset[disabled] .btn-deppon-primary.focus,
+.btn-deppon-primary.disabled:active,
+.btn-deppon-primary[disabled]:active,
+fieldset[disabled] .btn-deppon-primary:active,
+.btn-deppon-primary.disabled.active,
+.btn-deppon-primary[disabled].active,
+fieldset[disabled] .btn-deppon-primary.active {
+    background-color: #444a7c;
+    border-color: #444a7c;
+}
+
+.btn-deppon-primary .badge {
+    color: #444a7c;
+    background-color: white;
+}
+
+.btn-deppon-primary.btn-outline {
+    background-color: transparent;
+    background-image: none;
+    border-color: #444a7c;
+    color: #444a7c;
+}
+
+.btn-deppon-primary.btn-outline:hover,
+.btn-deppon-primary.btn-outline:focus,
+.btn-deppon-primary.btn-outline:active,
+.btn-deppon-primary.btn-outline.active {
+    background-color: #444a7c;
+    color: white;
+}
+
+/* Warning Button Style */
+.btn-deppon-warning {
+    color: white;
+    background-color: #FAAF19;
+    border: solid 1.5px #FAAF19;
+    border-radius: 6%;
+}
+
+.btn-deppon-warning:visited {
+    color: white;
+}
+
+.btn-deppon-warning:hover,
+.btn-deppon-warning:focus,
+.btn-deppon-warning.focus,
+.btn-deppon-warning:active,
+.btn-deppon-warning.active,
+.open > .dropdown-toggle.btn-deppon-warning {
+    color: white;
+    background-color: #FAAF19;
+    border: solid 1.5px #FAAF19;
+    border-radius: 6%;
+}
+
+.btn-deppon-warning::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #FAAF19;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0 *100);
+    filter: alpha(opacity=0 *100);
+    -webkit-transform: scale3d(0.7, 1, 1);
+    -moz-transform: scale3d(0.7, 1, 1);
+    -o-transform: scale3d(0.7, 1, 1);
+    -ms-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: transform 0.4s, opacity 0.4s;
+    -moz-transition: transform 0.4s, opacity 0.4s;
+    -o-transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btn-deppon-warning,
+.btn-deppon-warning::before {
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.btn-deppon-warning:hover::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.btn-deppon-warning:active,
+.btn-deppon-warning.active,
+.open > .dropdown-toggle.btn-deppon-warning {
+    background-image: none;
+    border-color: #FAAF19;
+}
+
+.btn-deppon-warning:active::before,
+.btn-deppon-warning.active::before,
+.open > .dropdown-toggle.btn-deppon-warning::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #FAAF19;
+}
+
+.btn-deppon-warning:active:hover,
+.btn-deppon-warning.active:hover,
+.open > .dropdown-toggle.btn-deppon-warning:hover,
+.btn-deppon-warning:active:focus,
+.btn-deppon-warning.active:focus,
+.open > .dropdown-toggle.btn-deppon-warning:focus,
+.btn-deppon-warning:active.focus,
+.btn-deppon-warning.active.focus,
+.open > .dropdown-toggle.btn-deppon-warning.focus {
+    color: white;
+    background-color: #FAAF19;
+    border-color: #FAAF19;
+}
+
+.btn-deppon-warning.disabled::before,
+.btn-deppon-warning[disabled]::before {
+    z-index: 1;
+}
+
+.btn-deppon-warning.disabled,
+.btn-deppon-warning[disabled],
+fieldset[disabled] .btn-deppon-warning,
+.btn-deppon-warning.disabled:hover,
+.btn-deppon-warning[disabled]:hover,
+fieldset[disabled] .btn-deppon-warning:hover,
+.btn-deppon-warning.disabled:focus,
+.btn-deppon-warning[disabled]:focus,
+fieldset[disabled] .btn-deppon-warning:focus,
+.btn-deppon-warning.disabled.focus,
+.btn-deppon-warning[disabled].focus,
+fieldset[disabled] .btn-deppon-warning.focus,
+.btn-deppon-warning.disabled:active,
+.btn-deppon-warning[disabled]:active,
+fieldset[disabled] .btn-deppon-warning:active,
+.btn-deppon-warning.disabled.active,
+.btn-deppon-warning[disabled].active,
+fieldset[disabled] .btn-deppon-warning.active {
+    background-color: #FAAF19;
+    border-color: #FAAF19;
+}
+
+.btn-deppon-warning .badge {
+    color: #FAAF19;
+    background-color: white;
+}
+
+.btn-deppon-warning.btn-outline {
+    background-color: transparent;
+    background-image: none;
+    border-color: #FAAF19;
+    color: #FAAF19;
+}
+
+.btn-deppon-warning.btn-outline:hover,
+.btn-deppon-warning.btn-outline:focus,
+.btn-deppon-warning.btn-outline:active,
+.btn-deppon-warning.btn-outline.active {
+    background-color: #FAAF19;
+    color: white;
+}
+
+/* Success Button Style */
+.btn-deppon-success {
+    color: white;
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-deppon-success:visited {
+    color: white;
+}
+
+.btn-deppon-success:hover,
+.btn-deppon-success:focus,
+.btn-deppon-success.focus,
+.btn-deppon-success:active,
+.btn-deppon-success.active,
+.open > .dropdown-toggle.btn-deppon-success {
+    color: white;
+    background-color: #2ecc71;
+    border-color: #25a25a;
+}
+
+.btn-deppon-success::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #25a25a;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0 *100);
+    filter: alpha(opacity=0 *100);
+    -webkit-transform: scale3d(0.7, 1, 1);
+    -moz-transform: scale3d(0.7, 1, 1);
+    -o-transform: scale3d(0.7, 1, 1);
+    -ms-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: transform 0.4s, opacity 0.4s;
+    -moz-transition: transform 0.4s, opacity 0.4s;
+    -o-transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btn-deppon-success,
+.btn-deppon-success::before {
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.btn-deppon-success:hover::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.btn-deppon-success:active,
+.btn-deppon-success.active,
+.open > .dropdown-toggle.btn-deppon-success {
+    background-image: none;
+    border-color: #239a55;
+}
+
+.btn-deppon-success:active::before,
+.btn-deppon-success.active::before,
+.open > .dropdown-toggle.btn-deppon-success::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #25a25a;
+}
+
+.btn-deppon-success:active:hover,
+.btn-deppon-success.active:hover,
+.open > .dropdown-toggle.btn-deppon-success:hover,
+.btn-deppon-success:active:focus,
+.btn-deppon-success.active:focus,
+.open > .dropdown-toggle.btn-deppon-success:focus,
+.btn-deppon-success:active.focus,
+.btn-deppon-success.active.focus,
+.open > .dropdown-toggle.btn-deppon-success.focus {
+    color: white;
+    background-color: #29b765;
+    border-color: #29b765;
+}
+
+.btn-deppon-success.disabled::before,
+.btn-deppon-success[disabled]::before {
+    z-index: 1;
+}
+
+.btn-deppon-success.disabled,
+.btn-deppon-success[disabled],
+fieldset[disabled] .btn-deppon-success,
+.btn-deppon-success.disabled:hover,
+.btn-deppon-success[disabled]:hover,
+fieldset[disabled] .btn-deppon-success:hover,
+.btn-deppon-success.disabled:focus,
+.btn-deppon-success[disabled]:focus,
+fieldset[disabled] .btn-deppon-success:focus,
+.btn-deppon-success.disabled.focus,
+.btn-deppon-success[disabled].focus,
+fieldset[disabled] .btn-deppon-success.focus,
+.btn-deppon-success.disabled:active,
+.btn-deppon-success[disabled]:active,
+fieldset[disabled] .btn-deppon-success:active,
+.btn-deppon-success.disabled.active,
+.btn-deppon-success[disabled].active,
+fieldset[disabled] .btn-deppon-success.active {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-deppon-success .badge {
+    color: #2ecc71;
+    background-color: white;
+}
+
+.btn-deppon-success.btn-outline {
+    background-color: transparent;
+    background-image: none;
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.btn-deppon-success.btn-outline:hover,
+.btn-deppon-success.btn-outline:focus,
+.btn-deppon-success.btn-outline:active,
+.btn-deppon-success.btn-outline.active {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* Info Button Style */
+.btn-deppon-info {
+    color: #444a7c;
+    background-color: #fff;
+    border: solid 1.5px #444a7c;
+    border-radius: 6%;
+}
+
+.btn-deppon-info:visited {
+    color: white;
+}
+
+.btn-deppon-info:hover,
+.btn-deppon-info:focus,
+.btn-deppon-info.focus,
+.btn-deppon-info:active,
+.btn-deppon-info.active,
+.open > .dropdown-toggle.btn-deppon-info {
+    background-color: #fff;
+    border: solid 1.5px #444a7c;
+    border-radius: 6%;
+}
+
+.btn-deppon-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #444a7c;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0 *100);
+    filter: alpha(opacity=0 *100);
+    -webkit-transform: scale3d(0.7, 1, 1);
+    -moz-transform: scale3d(0.7, 1, 1);
+    -o-transform: scale3d(0.7, 1, 1);
+    -ms-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: transform 0.4s, opacity 0.4s;
+    -moz-transition: transform 0.4s, opacity 0.4s;
+    -o-transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btn-deppon-info,
+.btn-deppon-info::before {
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.btn-deppon-info:hover::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.btn-deppon-info:active,
+.btn-deppon-info.active,
+.open > .dropdown-toggle.btn-deppon-info {
+    background-image: none;
+    border-color: #444a7c;
+}
+
+.btn-deppon-info:active::before,
+.btn-deppon-info.active::before,
+.open > .dropdown-toggle.btn-deppon-info::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #444a7c;
+}
+
+.btn-deppon-info:active:hover,
+.btn-deppon-info.active:hover,
+.open > .dropdown-toggle.btn-deppon-info:hover,
+.btn-deppon-info:active:focus,
+.btn-deppon-info.active:focus,
+.open > .dropdown-toggle.btn-deppon-info:focus,
+.btn-deppon-info:active.focus,
+.btn-deppon-info.active.focus,
+.open > .dropdown-toggle.btn-deppon-info.focus {
+    color: white;
+    background-color: #444a7c;
+    border-color: #444a7c;
+}
+
+.btn-deppon-info.disabled::before,
+.btn-deppon-info[disabled]::before {
+    z-index: 1;
+}
+
+.btn-deppon-info.disabled,
+.btn-deppon-info[disabled],
+fieldset[disabled] .btn-deppon-info,
+.btn-deppon-info.disabled:hover,
+.btn-deppon-info[disabled]:hover,
+fieldset[disabled] .btn-deppon-info:hover,
+.btn-deppon-info.disabled:focus,
+.btn-deppon-info[disabled]:focus,
+fieldset[disabled] .btn-deppon-info:focus,
+.btn-deppon-info.disabled.focus,
+.btn-deppon-info[disabled].focus,
+fieldset[disabled] .btn-deppon-info.focus,
+.btn-deppon-info.disabled:active,
+.btn-deppon-info[disabled]:active,
+fieldset[disabled] .btn-deppon-info:active,
+.btn-deppon-info.disabled.active,
+.btn-deppon-info[disabled].active,
+fieldset[disabled] .btn-deppon-info.active {
+    background-color: #444a7c;
+    border-color: #444a7c;
+}
+
+.btn-deppon-info .badge {
+    color: #444a7c;
+    background-color: white;
+}
+
+.btn-deppon-info.btn-outline {
+    background-color: transparent;
+    background-image: none;
+    border-color: #444a7c;
+    color: #444a7c;
+}
+
+.btn-deppon-info.btn-outline:hover,
+.btn-deppon-info.btn-outline:focus,
+.btn-deppon-info.btn-outline:active,
+.btn-deppon-info.btn-outline.active {
+    background-color: #444a7c;
+    color: white;
+}
+
+/* Danger Button Style */
+.btn-deppon-danger {
+    color: white;
+    background-color: #d96557;
+    border: solid 1.5px #d96557;
+    border-radius: 6%;
+}
+
+.btn-deppon-danger:visited {
+    color: white;
+}
+
+.btn-deppon-danger:hover,
+.btn-deppon-danger:focus,
+.btn-deppon-danger.focus,
+.btn-deppon-danger:active,
+.btn-deppon-danger.active,
+.open > .dropdown-toggle.btn-deppon-danger {
+    color: white;
+    background-color: #d96557;
+    border: solid 1.5px #ce402f;
+    border-radius: 6%;
+}
+
+.btn-deppon-danger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #ce402f;
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0 *100);
+    filter: alpha(opacity=0 *100);
+    -webkit-transform: scale3d(0.7, 1, 1);
+    -moz-transform: scale3d(0.7, 1, 1);
+    -o-transform: scale3d(0.7, 1, 1);
+    -ms-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: transform 0.4s, opacity 0.4s;
+    -moz-transition: transform 0.4s, opacity 0.4s;
+    -o-transition: transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btn-deppon-danger,
+.btn-deppon-danger::before {
+    -webkit-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -moz-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -o-animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.btn-deppon-danger:hover::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.btn-deppon-danger:active,
+.btn-deppon-danger.active,
+.open > .dropdown-toggle.btn-deppon-danger {
+    background-image: none;
+    border-color: #c63d2d;
+}
+
+.btn-deppon-danger:active::before,
+.btn-deppon-danger.active::before,
+.open > .dropdown-toggle.btn-deppon-danger::before {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    -webkit-opacity: 1;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 *100);
+    filter: alpha(opacity=1 *100);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #ce402f;
+}
+
+.btn-deppon-danger:active:hover,
+.btn-deppon-danger.active:hover,
+.open > .dropdown-toggle.btn-deppon-danger:hover,
+.btn-deppon-danger:active:focus,
+.btn-deppon-danger.active:focus,
+.open > .dropdown-toggle.btn-deppon-danger:focus,
+.btn-deppon-danger:active.focus,
+.btn-deppon-danger.active.focus,
+.open > .dropdown-toggle.btn-deppon-danger.focus {
+    color: white;
+    background-color: #d45242;
+    border-color: #d45242;
+}
+
+.btn-deppon-danger.disabled::before,
+.btn-deppon-danger[disabled]::before {
+    z-index: 1;
+}
+
+.btn-deppon-danger.disabled,
+.btn-deppon-danger[disabled],
+fieldset[disabled] .btn-deppon-danger,
+.btn-deppon-danger.disabled:hover,
+.btn-deppon-danger[disabled]:hover,
+fieldset[disabled] .btn-deppon-danger:hover,
+.btn-deppon-danger.disabled:focus,
+.btn-deppon-danger[disabled]:focus,
+fieldset[disabled] .btn-deppon-danger:focus,
+.btn-deppon-danger.disabled.focus,
+.btn-deppon-danger[disabled].focus,
+fieldset[disabled] .btn-deppon-danger.focus,
+.btn-deppon-danger.disabled:active,
+.btn-deppon-danger[disabled]:active,
+fieldset[disabled] .btn-deppon-danger:active,
+.btn-deppon-danger.disabled.active,
+.btn-deppon-danger[disabled].active,
+fieldset[disabled] .btn-deppon-danger.active {
+    background-color: #d96557;
+    border-color: #d96557;
+}
+
+.btn-deppon-danger .badge {
+    color: #d96557;
+    background-color: white;
+}
+
+.btn-deppon-danger.btn-outline {
+    background-color: transparent;
+    background-image: none;
+    border-color: #d96557;
+    color: #d96557;
+}
+
+.btn-deppon-danger.btn-outline:hover,
+.btn-deppon-danger.btn-outline:focus,
+.btn-deppon-danger.btn-outline:active,
+.btn-deppon-danger.btn-outline.active {
+    background-color: #d96557;
+    color: white;
+}
+
+.close {
+    font-weight: 400;
+}
+
+.btn.text-left {
+    text-align: left;
+}
+
+.btn.text-right {
+    text-align: right;
+}
+
+/*巡检结果阈值告警信息*/
+.check_wraper {
+    width: 90%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-top: 40px;
+}
+
+.warn_title {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.threshold {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+
+.threshold .t_item {
+    height: 30px;
+    line-height: 30px;
+    margin-right: 15px;
+}
+
+.check_wraper .d_title {
+    font-size: 16px;
+    position: relative;
+    height: 30px;
+    margin: 10px 0;
+    line-height: 30px;
+    padding-left: 8px;
+}
+
+.check_wraper .d_title:before {
+    content: '';
+    width: 5px;
+    background-color: #373c63;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.check_top{
+    background-color: #f4f4f4;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.check_item {
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.threshold .threshold_value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.overview {
+    padding-left: 10px;
+    width: 90%;
+}
+
+.success_result {
+    padding: 10px;
+    color: green;
+    border: 1px solid;
+    background-color: #d8f1d8;
+}
+
+.check_li {
+    border-radius: 0 !important;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0px !important;
+    padding: 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+.check_li:hover{
+    background-color:rgba(55,60,99,.3);
+    color: #FFFFFF;
+}
+.check_active{
+    background-color:rgba(55,60,99,.3);
+    color: #FFFFFF;
+}
+
+
+/*顶部导航选中*/
+.nav_top_active{
+    background-color: #123465;
+    color: #FFFFFF;
+}
+.menu_li{
+    color: #FFFFFF;
+}
+.active_left{
+    color:#1963aa !important;
+}
+/*解决数据未出现前 显示花括号问题*/
+
+[ng-cloak]{
+    display:none;
+}
+
+

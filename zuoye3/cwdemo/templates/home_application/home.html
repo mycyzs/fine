@@ -1,0 +1,66 @@
+<%inherit file="/base.html"/>
+
+<%block name="content">
+    <div class="home-page">
+        <button class="down_demo">下载模板文件</button>
+        <form style="display: inline-block" class="form-horizontal" id="upload_file_form" method="POST"
+              enctype="multipart/form-data">
+            <div class="demo" id="kendo_upload_demo3">
+                <input name="files" class="file_input" type="file" required>
+            </div>
+        </form>
+        <button class="up_excel">上传excel</button><button class="down_excel">下载excel</button>
+        <div id="grid"></div>
+    </div>
+
+</%block>
+<script>
+    $(function () {
+      $('.down_demo').click(function () {
+          window.open(site_url+'down_demo/')
+      });
+        $('.down_excel').click(function () {
+          window.open(site_url+'down_excel/')
+      });
+        $(".up_excel").click(function () {
+            $('#upload_file_form').ajaxSubmit({
+                url: site_url+'up_excel/',
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result) {
+                    } else {
+                        if (data.error_data) {
+                        } else {
+                        }
+                    }
+                },
+                error: function (data) {
+                }
+            });
+        })
+        
+        function search() {
+            $.ajax({
+                url:site_url+'search/',
+                type: 'post',
+                success:function (res) {
+                    console.log(res)
+                    $("#grid").kendoGrid({
+                      columns: [
+                        { field: "name",title:"用户名" },
+                        { field: "mail" ,title:"邮箱"},
+                        { field: "department" ,title:"部门"}
+                      ],
+                      dataSource: {
+                        data: res.data
+                      }
+                    });
+                }
+            })
+        }
+        search()
+    })
+    
+</script>
+

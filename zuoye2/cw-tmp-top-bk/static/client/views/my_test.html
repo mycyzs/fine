@@ -1,0 +1,23 @@
+<div>
+    <div dragable dialog-title="{{ title }}"></div>
+    <div style="width: 100%;padding: 30px 20px 20px 30px;">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">理由：</label>
+                <div class="col-sm-8">
+                    <textarea name="" id="" cols="30" rows="5" ng-model="args.comment"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+        <div style="text-align: center;margin-top: 10px;">
+            <button class="btn btn-sm btn-deppon-primary" ng-click="commit()">
+                确定
+            </button>
+            <button style="margin-left: 20px;" class="btn btn-sm btn-deppon-warning" ng-click="cancel()">
+                取消
+            </button>
+        </div>
+    </div>
+</div>

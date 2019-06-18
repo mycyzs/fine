@@ -1,0 +1,420 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server Version : 50720
+Source Host           : 192.168.50.11:3306
+Source Database       : dbplatform
+
+Target Server Type    : MYSQL
+Target Server Version : 50720
+File Encoding         : 65001
+
+Date: 2018-09-18 09:31:17
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for home_application_mysqlparameter
+-- ----------------------------
+DROP TABLE IF EXISTS `home_application_mysqlparameter`;
+CREATE TABLE `home_application_mysqlparameter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mysql_version` varchar(20) DEFAULT NULL,
+  `param_key` varchar(100) DEFAULT NULL,
+  `param_value` varchar(400) DEFAULT NULL,
+  `param_type` varchar(20) DEFAULT NULL,
+  `dynamic` tinyint(1) NOT NULL,
+  `readonly` tinyint(1) NOT NULL,
+  `comment` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of home_application_mysqlparameter
+-- ----------------------------
+INSERT INTO `home_application_mysqlparameter` VALUES ('1', 'all', 'socket', '/opt/mysql{port}/data/mysql.sock', 'mysql', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('2', 'all', 'default-character-set', 'utf8mb4', 'mysql', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('3', 'all', 'max_allowed_packet', '1G', 'mysql', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('4', 'all', 'prompt', '[\\u@\\h][\\d][\\r:\\m:\\s]>\\_', 'mysql', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('5', 'all', 'no-auto-rehash', 'ON', 'mysql', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('6', 'all', 'malloc-lib', 'tcmalloc', 'mysqld_safe', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('7', 'all', 'server-id', '{server}', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('8', 'all', 'innodb_buffer_pool_size', '1G', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('9', 'all', 'innodb_buffer_pool_instances', '4', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('10', 'all', 'innodb_log_file_size', '1G', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('11', 'all', 'innodb_log_files_in_group', '2', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('12', 'all', '#optimizer_switch', '\'use_index_extensions=off\'', 'mysqld', '1', '0', 'in 5.7,between MySQL 5.7.18 and 5.7.20,please set use_index_extensions=off');
+INSERT INTO `home_application_mysqlparameter` VALUES ('13', 'all', '#optimizer_switch', '\'derived_merge=off\'', 'mysqld', '1', '0', 'in 5.7,prior to MySQL 5.7.20,please set derived_merge=off');
+INSERT INTO `home_application_mysqlparameter` VALUES ('14', 'all', 'event_scheduler', 'OFF', 'mysqld', '1', '0', 'default OFF.no need to open if no scheduler task');
+INSERT INTO `home_application_mysqlparameter` VALUES ('15', 'all', '#read_only', '1', 'mysqld', '1', '0', 'the SLAVE need to open for MHA');
+INSERT INTO `home_application_mysqlparameter` VALUES ('16', 'all', 'max_connections', '1000', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('17', 'all', 'innodb_open_files', '512', 'mysqld', '0', '0', 'It specifies the maximum number of .ibd files that MySQL can keep open at one time');
+INSERT INTO `home_application_mysqlparameter` VALUES ('18', 'all', 'table_definition_cache', '512', 'mysqld', '1', '0', 'The number of table definitions (from .frm files) that can be stored in the definition cache.');
+INSERT INTO `home_application_mysqlparameter` VALUES ('19', 'all', 'table_open_cache', '2048', 'mysqld', '1', '0', 'The number of open tables for all threads');
+INSERT INTO `home_application_mysqlparameter` VALUES ('20', 'all', 'table_open_cache_instances', '16', 'mysqld', '0', '0', 'A value of 8 or 16 is recommended on systems that routinely use 16 or more cores');
+INSERT INTO `home_application_mysqlparameter` VALUES ('21', 'all', 'innodb_io_capacity_max', '2000', 'mysqld', '1', '0', 'When configuring innodb_io_capacity_max, twice the innodb_io_capacity is often a good starting point');
+INSERT INTO `home_application_mysqlparameter` VALUES ('22', 'all', 'innodb_io_capacity', '1000', 'mysqld', '1', '0', 'if is ssd,can be set to The count of iops. a disk may be  10000');
+INSERT INTO `home_application_mysqlparameter` VALUES ('23', 'all', 'tmp_table_size', '32M', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('24', 'all', 'sort_buffer_size', '16M', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('25', 'all', 'join_buffer_size', '64M', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('26', 'all', 'read_buffer_size', '8M', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('27', 'all', 'read_rnd_buffer_size', '16M', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('28', 'all', 'datadir', '/opt/mysql{port}/data', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('29', 'all', 'tmpdir', '/opt/mysql{port}/tmp', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('30', 'all', 'log_bin', '/opt/mysql{port}/log/bin', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('31', 'all', 'log-bin-index', '/opt/mysql{port}/log/bin.index', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('32', 'all', 'relay_log', '/opt/mysql{port}/log/relay', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('33', 'all', 'socket', '/opt/mysql{port}/data/mysql.sock', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('34', 'all', 'port', '{port}', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('35', 'all', 'basedir', '/usr/local/mysql', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('36', 'all', 'pid-file', 'pid', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('37', 'all', 'innodb_data_file_path', 'ibdata1:12M:autoextend', 'mysqld', '0', '1', 'default ibdata1:12M:autoextend');
+INSERT INTO `home_application_mysqlparameter` VALUES ('38', 'all', 'sql_mode', 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('39', 'all', 'log_bin_trust_function_creators', '1', 'mysqld', '1', '0', 'It controls whether stored function creators can be trusted.(default 0)');
+INSERT INTO `home_application_mysqlparameter` VALUES ('40', 'all', 'innodb_numa_interleave', '1', 'mysqld', '0', '0', 'Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool');
+INSERT INTO `home_application_mysqlparameter` VALUES ('41', 'all', 'skip_name_resolve', 'ON', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('42', 'all', 'log_slave_updates', 'ON', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('43', 'all', 'user', 'mysql', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('44', 'all', 'lower_case_table_names', '1', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('45', 'all', 'character_set_server', 'utf8mb4', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('46', 'all', 'autocommit', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('47', 'all', 'max_connect_errors', '1000000', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('48', 'all', 'max_allowed_packet', '1G', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('49', 'all', 'innodb_stats_on_metadata', 'OFF', 'mysqld', '1', '0', 'default OFF');
+INSERT INTO `home_application_mysqlparameter` VALUES ('50', 'all', 'innodb_stats_persistent', 'on', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('51', 'all', 'innodb_stats_persistent_sample_pages', '64', 'mysqld', '1', '0', 'default 20.Increasing the value improves the accuracy of index statistics');
+INSERT INTO `home_application_mysqlparameter` VALUES ('52', 'all', 'connect_timeout', '10', 'mysqld', '1', '0', 'default 10');
+INSERT INTO `home_application_mysqlparameter` VALUES ('53', 'all', 'lock_wait_timeout', '3', 'mysqld', '1', '0', 'metadata lock');
+INSERT INTO `home_application_mysqlparameter` VALUES ('54', 'all', 'innodb_lock_wait_timeout', '5', 'mysqld', '1', '0', 'innodb row lock');
+INSERT INTO `home_application_mysqlparameter` VALUES ('55', 'all', 'innodb_autoinc_lock_mode', '2', 'mysqld', '0', '0', 'which allows higher concurrency for insert operations');
+INSERT INTO `home_application_mysqlparameter` VALUES ('56', 'all', 'wait_timeout', '1800', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('57', 'all', 'interactive_timeout', '1800', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('58', 'all', 'sync_binlog', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('59', 'all', 'binlog_format', 'ROW', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('60', 'all', 'binlog_cache_size', '1M', 'mysqld', '1', '0', 'default 32768');
+INSERT INTO `home_application_mysqlparameter` VALUES ('61', 'all', 'expire_logs_days', '15', 'mysqld', '1', '0', 'default 32768');
+INSERT INTO `home_application_mysqlparameter` VALUES ('62', 'all', 'binlog_rows_query_log_events', '1', 'mysqld', '1', '0', 'write informational log events such as row query log events into its binary log');
+INSERT INTO `home_application_mysqlparameter` VALUES ('63', 'all', 'default_storage_engine', 'InnoDB', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('64', 'all', 'default_tmp_storage_engine', 'InnoDB', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('65', 'all', 'transaction_isolation', 'READ-COMMITTED', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('66', 'all', 'innodb_flush_method', 'O_DIRECT', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('67', 'all', '#innodb_file_format', 'Barracuda', 'mysqld', '1', '1', 'default Barracuda.and will be removed');
+INSERT INTO `home_application_mysqlparameter` VALUES ('68', 'all', '#innodb_file_format_max', 'Barracuda', 'mysqld', '1', '1', 'default Barracuda.and will be removed');
+INSERT INTO `home_application_mysqlparameter` VALUES ('69', 'all', 'innodb_file_per_table', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('70', 'all', 'innodb_large_prefix', '1', 'mysqld', '1', '0', 'default on.and will be removed');
+INSERT INTO `home_application_mysqlparameter` VALUES ('71', 'all', 'innodb_purge_threads', '4', 'mysqld', '0', '0', 'if the number of the core is more,the max value is 6');
+INSERT INTO `home_application_mysqlparameter` VALUES ('72', 'all', 'innodb_page_cleaners', '16', 'mysqld', '0', '0', 'the max value is  64,if the number of the core is more,can set to the same value as innodb_buffer_pool_instances');
+INSERT INTO `home_application_mysqlparameter` VALUES ('73', 'all', 'innodb_page_size', '16K', 'mysqld', '0', '1', 'InnoDB page size (default 16KB)');
+INSERT INTO `home_application_mysqlparameter` VALUES ('74', 'all', 'innodb_log_buffer_size', '16M', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('75', 'all', 'innodb_sort_buffer_size', '64M', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('76', 'all', 'innodb_flush_log_at_trx_commit', '1', 'mysqld', '1', '1', 'default 1');
+INSERT INTO `home_application_mysqlparameter` VALUES ('77', 'all', 'innodb_strict_mode', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('78', 'all', 'innodb_print_all_deadlocks', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('79', 'all', 'innodb_online_alter_log_max_size', '1G', 'mysqld', '1', '0', 'Specifies an upper limit on the size of the temporary log files used during online DDL operations for InnoDB tables');
+INSERT INTO `home_application_mysqlparameter` VALUES ('80', 'all', 'innodb_buffer_pool_dump_at_shutdown', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('81', 'all', 'innodb_buffer_pool_load_at_startup', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('82', 'all', 'innodb_adaptive_hash_index', 'on', 'mysqld', '1', '0', 'default on');
+INSERT INTO `home_application_mysqlparameter` VALUES ('83', 'all', 'innodb_adaptive_flushing', 'on', 'mysqld', '1', '0', 'default on');
+INSERT INTO `home_application_mysqlparameter` VALUES ('84', 'all', 'innodb_doublewrite', 'on', 'mysqld', '0', '0', 'default on');
+INSERT INTO `home_application_mysqlparameter` VALUES ('85', 'all', 'innodb_flush_neighbors', '0', 'mysqld', '1', '0', 'default on');
+INSERT INTO `home_application_mysqlparameter` VALUES ('86', 'all', 'innodb_old_blocks_time', '1000', 'mysqld', '1', '0', 'default 1000ms.Specifies how long in milliseconds a block inserted into the old sublist must stay there after its first access before it can be moved to the new sublist');
+INSERT INTO `home_application_mysqlparameter` VALUES ('87', 'all', 'innodb_old_blocks_pct', '37', 'mysqld', '1', '0', 'default 37.Specifies the approximate percentage of the InnoDB buffer pool used for the old block sublist');
+INSERT INTO `home_application_mysqlparameter` VALUES ('88', 'all', 'innodb_thread_concurrency', '0', 'mysqld', '1', '1', 'default 0.innodb_thread_concurrency can be set smaller than the number of vCPUs. If the number of concurrent user threads for a workload is less than 64, set');
+INSERT INTO `home_application_mysqlparameter` VALUES ('89', 'all', 'innodb_write_io_threads', '8', 'mysqld', '0', '0', 'simple can be set to The number of disk');
+INSERT INTO `home_application_mysqlparameter` VALUES ('90', 'all', 'innodb_read_io_threads', '8', 'mysqld', '0', '0', 'simple can be set to The number of disk');
+INSERT INTO `home_application_mysqlparameter` VALUES ('91', 'all', '#query_cache_type', '0', 'mysqld', '1', '1', 'default 0,no use QC and will be removed');
+INSERT INTO `home_application_mysqlparameter` VALUES ('92', 'all', 'log_error', 'error.log', 'mysqld', '0', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('93', 'all', 'log_error_verbosity', '3', 'mysqld', '1', '0', 'default 3(note warning error),2(warning error)');
+INSERT INTO `home_application_mysqlparameter` VALUES ('94', 'all', 'long_query_time', '1', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('95', 'all', 'slow_query_log', '1', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('96', 'all', 'log_slow_admin_statements', '1', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('97', 'all', 'log_slow_slave_statements', '1', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('98', 'all', 'min_examined_row_limit', '10001', 'mysqld', '1', '0', 'performance_schema_digests_size default is 10000.In order to MEM use this table to query data not record to slow.log');
+INSERT INTO `home_application_mysqlparameter` VALUES ('99', 'all', 'slow_query_log_file', 'slow.log', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('100', 'all', 'log_queries_not_using_indexes', '1', 'mysqld', '1', '0', 'Whether queries that do not use indexes are logged to the slow query log');
+INSERT INTO `home_application_mysqlparameter` VALUES ('101', 'all', 'log_throttle_queries_not_using_indexes', '10', 'mysqld', '1', '0', 'limits the number of such queries per minute that can be written to the slow query log. A value of 0 (the default) means \'no limit\'');
+INSERT INTO `home_application_mysqlparameter` VALUES ('102', 'all', 'enforce_gtid_consistency', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('103', 'all', 'binlog_gtid_simple_recovery', '1', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('104', 'all', 'gtid_mode', 'ON', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('105', 'all', 'master_info_repository', 'TABLE', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('106', 'all', 'relay_log_info_repository', 'TABLE', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('107', 'all', 'relay_log_recovery', '1', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('108', 'all', 'slave-parallel-type', 'LOGICAL_CLOCK', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('109', 'all', 'slave-parallel-workers', '8', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('110', 'all', 'slave-rows-search-algorithms', '\'INDEX_SCAN,HASH_SCAN\'', 'mysqld', '1', '1', 'more effective if the row events are big enough in no key.');
+INSERT INTO `home_application_mysqlparameter` VALUES ('111', 'all', 'slave_transaction_retries', '128', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('112', 'all', 'show_compatibility_56', 'OFF', 'mysqld', '1', '1', 'default OFF and will be removed');
+INSERT INTO `home_application_mysqlparameter` VALUES ('113', 'all', 'slave_preserve_commit_order', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('114', 'all', 'slave_skip_errors', 'ddl_exist_errors', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('115', 'all', 'slave_pending_jobs_size_max', '1G', 'mysqld', '1', '1', 'The value must not be less than the master\'s value for max_allowed_packet which prevent a slave worker queue may become full');
+INSERT INTO `home_application_mysqlparameter` VALUES ('116', 'all', 'plugin_load', '\'rpl_semi_sync_master=semisync_master.so;rpl_semi_sync_slave=semisync_slave.so\'', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('117', 'all', 'rpl_semi_sync_master_enabled', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('118', 'all', 'rpl_semi_sync_slave_enabled', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('119', 'all', 'rpl_semi_sync_master_timeout', '3000', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('120', 'all', 'log_timestamps', 'system', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('121', 'all', 'innodb_lru_scan_depth', '512', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('122', 'all', 'explicit_defaults_for_timestamp', '1', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('123', 'all', 'innodb_purge_rseg_truncate_frequency', '128', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('124', 'all', 'innodb_buffer_pool_dump_pct', '40', 'mysqld', '1', '0', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('125', 'all', 'innodb_undo_log_truncate', 'on', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('126', 'all', 'innodb_max_undo_log_size', '2G', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('127', 'all', 'innodb_undo_logs', '128', 'mysqld', '1', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('128', 'all', 'innodb_undo_tablespaces', '3', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('129', 'all', 'performance_schema', '1', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('130', 'all', 'performance_schema_instrument', '\'transaction=ON\'', 'mysqld', '0', '1', 'transaction');
+INSERT INTO `home_application_mysqlparameter` VALUES ('131', 'all', 'performance_schema_instrument', '\'wait/lock/metadata/sql/mdl=ON\'', 'mysqld', '0', '1', 'metadata');
+INSERT INTO `home_application_mysqlparameter` VALUES ('132', 'all', 'performance_schema_instrument', '\'memory/%=COUNTED\'', 'mysqld', '0', '1', 'memory');
+INSERT INTO `home_application_mysqlparameter` VALUES ('133', 'all', 'performance_schema_consumer_events_statements_history_long', 'ON', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('134', 'all', 'performance_schema_consumer_events_transactions_current', 'ON', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('135', 'all', 'performance_schema_consumer_events_transactions_history', 'ON', 'mysqld', '0', '1', '');
+INSERT INTO `home_application_mysqlparameter` VALUES ('136', 'all', 'performance_schema_max_sql_text_length', '2048', 'mysqld', '0', '0', 'for MEM QUAN');
+INSERT INTO `home_application_mysqlparameter` VALUES ('137', 'all', 'max_digest_length', '2048', 'mysqld', '0', '0', 'for MEM QUAN');
+
+
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server Version : 50720
+Source Host           : 192.168.50.11:3306
+Source Database       : dbplatform
+
+Target Server Type    : MYSQL
+Target Server Version : 50720
+File Encoding         : 65001
+
+Date: 2018-09-18 09:33:49
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for home_application_operatedict
+-- ----------------------------
+DROP TABLE IF EXISTS `home_application_operatedict`;
+CREATE TABLE `home_application_operatedict` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_menu` varchar(50) NOT NULL,
+  `second_menu` varchar(50) NOT NULL,
+  `en_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of home_application_operatedict
+-- ----------------------------
+INSERT INTO `home_application_operatedict` VALUES ('1', 'CMDB管理', '新增MySQL系统', 'ADD_MYSQL_SYS');
+INSERT INTO `home_application_operatedict` VALUES ('2', 'CMDB管理', '新增Oracle系统', 'ADD_ORACLE_SYS');
+INSERT INTO `home_application_operatedict` VALUES ('3', 'CMDB管理', '新增MySQL集群', 'ADD_MYSQL_CLUSTER');
+INSERT INTO `home_application_operatedict` VALUES ('4', 'CMDB管理', '新增Oracle集群', 'ADD_ORACLE_CLUSTER');
+INSERT INTO `home_application_operatedict` VALUES ('5', 'CMDB管理', '新增MySQL实例', 'ADD_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('6', 'CMDB管理', '新增Oracle实例', 'ADD_ORACLE_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('7', 'CMDB管理', '修改MySQL系统', 'MODIFY_MYSQL_SYS');
+INSERT INTO `home_application_operatedict` VALUES ('8', 'CMDB管理', '修改Oracle系统', 'MODIFY_ORACLE_SYS');
+INSERT INTO `home_application_operatedict` VALUES ('9', 'CMDB管理', '修改MySQL集群', 'MODIFY_MYSQL_CLUSTER');
+INSERT INTO `home_application_operatedict` VALUES ('10', 'CMDB管理', '修改Oracle集群', 'MODIFY_ORACLE_CLUSTER');
+INSERT INTO `home_application_operatedict` VALUES ('11', 'CMDB管理', '修改MySQL实例', 'MODIFY_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('12', 'CMDB管理', '修改Oracle实例', 'MODIFY_ORACLE_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('13', 'CMDB管理', '删除MySQL系统', 'DEL_MYSQL_SYS');
+INSERT INTO `home_application_operatedict` VALUES ('14', 'CMDB管理', '删除Oracle系统', 'DEL_ORACLE_SYS');
+INSERT INTO `home_application_operatedict` VALUES ('15', 'CMDB管理', '删除MySQL集群', 'DEL_MYSQL_CLUSTER');
+INSERT INTO `home_application_operatedict` VALUES ('16', 'CMDB管理', '删除Oracle集群', 'DEL_ORACLE_CLUSTER');
+INSERT INTO `home_application_operatedict` VALUES ('17', 'CMDB管理', '删除MySQL实例', 'DEL_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('18', 'CMDB管理', '删除Oracle实例', 'DEL_ORACLE_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('19', 'SQL上线', 'MySQL上线SQL', 'EXEC_MYSQL_SQL');
+INSERT INTO `home_application_operatedict` VALUES ('20', 'SQL上线', 'Oracle上线SQL', 'EXEC_ORACLE_SQL');
+INSERT INTO `home_application_operatedict` VALUES ('21', 'SQL上线', '修改MySQL审核规则', 'MODIFY_MYSQL_RULE');
+INSERT INTO `home_application_operatedict` VALUES ('22', 'SQL上线', '修改Oracle审核规则', 'MODIFY_ORACLE_RULE');
+INSERT INTO `home_application_operatedict` VALUES ('23', 'SQL上线', '添加MySQL审核规则', 'ADD_MYSQL_RULE');
+INSERT INTO `home_application_operatedict` VALUES ('24', 'SQL上线', '添加Oracle审核规则', 'ADD_ORACLE_RULE');
+INSERT INTO `home_application_operatedict` VALUES ('25', 'SQL上线', '删除MySQL审核规则', 'DEL_MYSQL_RULE');
+INSERT INTO `home_application_operatedict` VALUES ('26', 'SQL上线', '删除Oracle审核规则', 'DEL_ORACLE_RULE');
+INSERT INTO `home_application_operatedict` VALUES ('27', 'MHA管理', '新增MHA管理节点', 'ADD_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('28', 'MHA管理', '修改MHA管理节点', 'MODIFY_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('29', 'MHA管理', '删除MHA管理节点', 'DEL_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('30', 'MHA管理', '启动MHA管理进程', 'START_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('31', 'MHA管理', '关闭MHA管理进程', 'STOP_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('32', 'MHA管理', '检查MHA状态', 'CHECK_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('33', 'MHA管理', 'MHA主从切换', 'SWITCH_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('34', 'MHA管理', 'MHA部署', 'DEPLOY_MHA_MANAGER');
+INSERT INTO `home_application_operatedict` VALUES ('35', '实例安装', '实例部署', 'INSTALL_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('36', '实例安装', '从库部署', 'MYSQL_SLAVE_INSTALL');
+INSERT INTO `home_application_operatedict` VALUES ('37', '实例安装', '主从部署', 'INSTALL_MASTER_SLAVE');
+INSERT INTO `home_application_operatedict` VALUES ('38', '实例安装', '多实例关联', 'CREATE_RELATION');
+INSERT INTO `home_application_operatedict` VALUES ('39', '中间件管理', '增加QS信息', 'ADD_QS_INFO');
+INSERT INTO `home_application_operatedict` VALUES ('40', '中间件管理', '增加LVS信息', 'ADD_LVS_INFO');
+INSERT INTO `home_application_operatedict` VALUES ('41', '中间件管理', '修改QS信息', 'MODIFY_QS_INFO');
+INSERT INTO `home_application_operatedict` VALUES ('42', '中间件管理', '修改LVS信息', 'MODIFY_LVS_INFO');
+INSERT INTO `home_application_operatedict` VALUES ('43', '中间件管理', '删除QS信息', 'DELETE_QS_INFO');
+INSERT INTO `home_application_operatedict` VALUES ('44', '中间件管理', '删除QS信息', 'DELETE_LVS_INFO');
+INSERT INTO `home_application_operatedict` VALUES ('45', '中间件管理', '部署QS', 'DEPLOY_QS');
+INSERT INTO `home_application_operatedict` VALUES ('46', '中间件管理', '部署LVS', 'DEPLOY_LVS');
+INSERT INTO `home_application_operatedict` VALUES ('47', '中间件管理', '修改QS参数', 'MODIFY_QS_PARAM');
+INSERT INTO `home_application_operatedict` VALUES ('48', '中间件管理', '修改LVS参数', 'MODIFY_LVS_PARAM');
+INSERT INTO `home_application_operatedict` VALUES ('49', '中间件管理', '启停QS', 'MANAGE_QS_PROCESS');
+INSERT INTO `home_application_operatedict` VALUES ('50', '中间件管理', '启停LVS', 'MANAGE_LVS_PROCESS');
+INSERT INTO `home_application_operatedict` VALUES ('51', '数据库巡检', '新增巡检项', 'ADD_CHECK_ITEM');
+INSERT INTO `home_application_operatedict` VALUES ('52', '数据库巡检', '修改巡检项', 'MODIFY_CHECK_ITEM');
+INSERT INTO `home_application_operatedict` VALUES ('53', '数据库巡检', '删除巡检项', 'DELETE_CHECK_ITEM');
+INSERT INTO `home_application_operatedict` VALUES ('54', '数据库巡检', '新增巡检模板', 'ADD_CHECK_TEMPLATE');
+INSERT INTO `home_application_operatedict` VALUES ('55', '数据库巡检', '修改巡检模板', 'MODIFY_CHECK_TEMPLATE');
+INSERT INTO `home_application_operatedict` VALUES ('56', '数据库巡检', '删除巡检模板', 'DELETE_CHECK_TEMPLATE');
+INSERT INTO `home_application_operatedict` VALUES ('57', '数据库巡检', '创建巡检任务', 'ADD_CHECK_TASK');
+INSERT INTO `home_application_operatedict` VALUES ('58', '数据库巡检', '修改巡检任务', 'MODIFY_CHECK_TASK');
+INSERT INTO `home_application_operatedict` VALUES ('59', '数据库巡检', '删除巡检任务', 'DELETE_CHECK_TASK');
+INSERT INTO `home_application_operatedict` VALUES ('60', '数据库巡检', '执行巡检任务', 'RUN_CHECK_TASK');
+INSERT INTO `home_application_operatedict` VALUES ('61', '实例管理', 'MYSQL实例升降级', 'UPGRADE_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('62', '实例管理', '启动MYSQL实例', 'START_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('63', '实例管理', '参数变更', 'MYSQL_PARAM_MODIFY');
+INSERT INTO `home_application_operatedict` VALUES ('64', '实例管理', '停止MYSQL实例', 'STOP_MYSQL_INSTANCE');
+INSERT INTO `home_application_operatedict` VALUES ('65', '数据库账号管理', '添加数据库账号', 'ADD_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('66', '数据库账号管理', '修改数据库账号', 'CHANGE_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('67', '数据库账号管理', '删除数据库账号', 'DEL_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('68', '数据库账号管理', '申请MYSQL账号', 'REQUEST_MYSQL_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('69', '数据库账号管理', '申请ORACLE账号', 'REQUEST_ORACLE_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('70', '导入导出', 'MYSQL数据导出', 'MYSQL_DATA_EXPORT');
+INSERT INTO `home_application_operatedict` VALUES ('71', '导入导出', 'MYSQL数据导入', 'MYSQL_DATA_IMPORT');
+INSERT INTO `home_application_operatedict` VALUES ('72', '导入导出', 'ORACLE数据导出', 'ORACLE_DATA_EXPORT');
+INSERT INTO `home_application_operatedict` VALUES ('73', '导入导出', 'ORACLE数据导入', 'ORACLE_DATA_IMPORT');
+INSERT INTO `home_application_operatedict` VALUES ('74', '系统配置', '新增配置', 'ADD_SETTING');
+INSERT INTO `home_application_operatedict` VALUES ('75', '系统配置', '修改配置', 'MODIFY_SETTING');
+INSERT INTO `home_application_operatedict` VALUES ('76', '系统配置', '删除配置', 'DEL_SETTING');
+INSERT INTO `home_application_operatedict` VALUES ('77', '系统配置', '新增平台账号', 'ADD_PLATFORM_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('78', '系统配置', '修改平台账号', 'MODIFY_PLATFORM_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('79', '系统配置', '删除平台账号', 'DEL_PLATFORM_ACCOUNT');
+INSERT INTO `home_application_operatedict` VALUES ('80', 'MySQL参数模板管理', '新增参数', 'ADD_MYSQL_PARAM');
+INSERT INTO `home_application_operatedict` VALUES ('81', 'MySQL参数模板管理', '修改参数', 'MODIFY_MYSQL_PARAM');
+INSERT INTO `home_application_operatedict` VALUES ('82', 'MySQL参数模板管理', '删除参数', 'DEL_MYSQL_PARAM');
+INSERT INTO `home_application_operatedict` VALUES ('83', 'MySQL参数模板管理', '新增模板', 'ADD_MYSQL_TEMPLATE');
+INSERT INTO `home_application_operatedict` VALUES ('84', 'MySQL参数模板管理', '修改模板', 'MODIFY_MYSQL_TEMPLATE');
+INSERT INTO `home_application_operatedict` VALUES ('85', 'MySQL参数模板管理', '删除模板', 'DEL_MYSQL_TEMPLATE');
+INSERT INTO `home_application_operatedict` VALUES ('86', 'MySQL参数模板管理', '新增模板分录', 'ADD_MYSQL_TEMPLATE_ENTRY');
+INSERT INTO `home_application_operatedict` VALUES ('87', 'MySQL参数模板管理', '修改模板分录', 'MODIFY_MYSQL_TEMPLATE_ENTRY');
+INSERT INTO `home_application_operatedict` VALUES ('88', 'MySQL参数模板管理', '删除模板分录', 'DEL_MYSQL_TEMPLATE_ENTRY');
+
+
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server Version : 50720
+Source Host           : 192.168.50.11:3306
+Source Database       : dbplatform
+
+Target Server Type    : MYSQL
+Target Server Version : 50720
+File Encoding         : 65001
+
+Date: 2018-09-18 09:34:48
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for home_application_inceptionparam
+-- ----------------------------
+DROP TABLE IF EXISTS `home_application_inceptionparam`;
+CREATE TABLE `home_application_inceptionparam` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `param_name` varchar(50) NOT NULL,
+  `old_value` varchar(50) DEFAULT NULL,
+  `new_value` varchar(50) DEFAULT NULL,
+  `comment` varchar(500) DEFAULT NULL,
+  `options` varchar(30) DEFAULT NULL,
+  `default` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of home_application_inceptionparam
+-- ----------------------------
+INSERT INTO `home_application_inceptionparam` VALUES ('1', 'inception_check_insert_field', '', '', '是不是要检查插入语句中的列链表的存在性', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('2', 'inception_check_dml_where', '', '', '在DML语句中没有WHERE条件时，是不是要报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('3', 'inception_check_dml_limit', '', '', '在DML语句中使用了LIMIT时，是不是要报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('4', 'inception_check_dml_orderby', '', '', '在DML语句中使用了Order By时，是不是要报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('5', 'inception_enable_select_star', '', '', 'Select*时是不是要报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('6', 'inception_enable_orderby_rand', '', '', 'order by rand时是不是报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('7', 'inception_enable_nullable', '', '', '创建或者新增列时如果列为NULL，是不是报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('8', 'inception_enable_foreign_key', '', '', '是不是支持外键', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('9', 'inception_max_key_parts', '', '', '一个索引中，列的最大个数，超过这个数目则报错', '1-64', '5');
+INSERT INTO `home_application_inceptionparam` VALUES ('10', 'inception_max_update_rows', '', '', '在一个修改语句中，预计影响的最大行数，超过这个数就报错', '1-MAX', '10000');
+INSERT INTO `home_application_inceptionparam` VALUES ('11', 'inception_max_keys', '', '', '一个表中，最大的索引数目，超过这个数则报错', '1-1024', '16');
+INSERT INTO `home_application_inceptionparam` VALUES ('12', 'inception_enable_not_innodb', '', '', '建表指定的存储引擎不为Innodb，不报错', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('13', 'inception_support_charset', '', '', '表示在建表或者建库时支持的字符集，如果需要多个，则用逗号分隔，影响的范围是建表、设置会话字符集、修改表字符集属性等', 'MySQL支持字符集', 'utf8mb4');
+INSERT INTO `home_application_inceptionparam` VALUES ('14', 'inception_check_table_comment', '', '', '建表时，表没有注释时报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('15', 'inception_check_column_comment', '', '', '建表时，列没有注释时报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('16', 'inception_check_primary_key', '', '', '建表时，如果没有主键，则报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('17', 'inception_enable_partition_table', '', '', '是不是支持分区表', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('18', 'inception_enable_enum_set_bit', '', '', '是不是支持enum,set,bit数据类型', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('19', 'inception_check_index_prefix', '', '', '是不是要检查索引名字前缀为\'idx_\'，检查唯一索引前缀是不是\'uniq_\'', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('20', 'inception_enable_autoincrement_unsigned', '', '', '自增列是不是要为无符号型', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('21', 'inception_max_char_length', '', '', '当char类型的长度大于这个值时，就提示将其转换为VARCHAR', '1-MAX', '16');
+INSERT INTO `home_application_inceptionparam` VALUES ('22', 'inception_check_autoincrement_init_value', '', '', '当建表时自增列的值指定的不为1，则报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('23', 'inception_check_autoincrement_datatype', '', '', '当建表时自增列的类型不为int或者bigint时报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('24', 'inception_check_timestamp_default', '', '', '建表时，如果没有为timestamp类型指定默认值，则报错', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('25', 'inception_enable_column_charset', '', '', '允许列自己设置字符集', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('26', 'inception_check_autoincrement_name', '', '', '建表时，如果指定的自增列的名字不为ID，则报错，说明是有意义的，给提示', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('27', 'inception_merge_alter_table', '', '', '在多个改同一个表的语句出现是，报错，提示合成一个', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('28', 'inception_check_column_default_value', '', '', '检查在建表、修改列、新增列时，新的列属性是不是要有默认值', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('29', 'inception_enable_blob_type', '', '', '检查是不是支持BLOB字段，包括建表、修改列、新增列操作', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('30', 'inception_enable_identifer_keyword', '', '', '检查在SQL语句中，是不是有标识符被写成MySQL的关键字，默认值为报警。', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('31', 'auto_commit', '', '', '这个参数的作用是为了匹配Python客户端每次自动设置auto_commit=0的，如果取消则会报错，针对Inception本身没有实际意义', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('32', 'bind_address', '', '', '这个参数实际上就是MySQL数据库原来的参数，因为Incpetion没有权限验证过程，那么为了实现更安全的访问，可以给Inception服务器的这个参数设置某台机器（Inception上层的应用程序）不地址，这样其它非法程序是不可访问的，那么再加上Inception执行的选项中的用户名密码，对MySQL就更加安全', 'string', '*');
+INSERT INTO `home_application_inceptionparam` VALUES ('33', 'general_log', '', '', '这个参数就是原生的MySQL的参数，用来记录在Inception服务上执行过哪些语句，用来定位一些问题等', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('34', 'general_log_file', '', '', '设置general log写入的文件路径', 'string', 'inception.log');
+INSERT INTO `home_application_inceptionparam` VALUES ('35', 'inception_user', '', '', '这个用户名在配置之后，在连接Inception的选项中可以不指定user，这样线上数据库的用户名及密码就可以不暴露了，可以做为临时使用的一种方式，但这个用户现在只能是用来审核，也就是说，即使在选项中指定--enable-execute，也不能执行，这个是只能用来审核的帐号。', 'string', 'empty');
+INSERT INTO `home_application_inceptionparam` VALUES ('36', 'inception_password', '', '', '与上面的参数是一对，这个参数对应的是选项中的password，设置这个参数之后，可以在选项中不指定password', 'string', 'empty');
+INSERT INTO `home_application_inceptionparam` VALUES ('37', 'inception_enable_sql_statistic', '', '', '设置是不是支持统计Inception执行过的语句中，各种语句分别占多大比例，如果打开这个参数，则每次执行的情况都会在备份数据库实例中的inception库的statistic表中以一条记录存储这次操作的统计情况，每次操作对应一条记录，这条记录中含有的信息是各种类型的语句执行次数情况。', 'ON/OFF', 'ON');
+INSERT INTO `home_application_inceptionparam` VALUES ('38', 'inception_read_only', '', '', '设置当前Inception服务器是不是只读的，这是为了防止一些人具有修改权限的帐号时，通过Inception误修改一些数据，如果inception_read_only设置为ON，则即使开了enable-execute，同时又有执行权限，也不会去执行，审核完成即返回', 'ON/OFF', 'OFF');
+INSERT INTO `home_application_inceptionparam` VALUES ('39', 'inception_check_identifier', '', '', '打开与关闭Inception对SQL语句中各种名字的检查，如果设置为ON，则如果发现名字中存在除数字、字母、下划线之外的字符时，会报Identifier \'invalidname\' is invalid, valid options: [a-z,A-Z,0-9,_].', 'ON/OFF', 'ON');
+
+
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server Version : 50628
+Source Host           : localhost:3306
+Source Database       : dbplatform
+
+Target Server Type    : MYSQL
+Target Server Version : 50628
+File Encoding         : 65001
+
+Date: 2018-09-26 11:18:52
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `home_application_settings`
+-- ----------------------------
+DROP TABLE IF EXISTS `home_application_settings`;
+CREATE TABLE `home_application_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(45) DEFAULT NULL,
+  `value` varchar(500) DEFAULT NULL,
+  `comment` varchar(200) DEFAULT NULL,
+  `can_delete` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `key` (`key`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of home_application_settings
+-- ----------------------------
+INSERT INTO `home_application_settings` VALUES ('1', 'file_server_ip', '10.230.46.164', '文件服务器ip', '1');
+INSERT INTO `home_application_settings` VALUES ('2', 'mysql_software_dir', '/opt/software/mysql', 'mysql安装包路径', '1');
+INSERT INTO `home_application_settings` VALUES ('3', 'mysql_packages', 'mysql-5.7.20-linux-glibc2.12-x86_64.tar.gz,mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz', 'mysql安装包', '1');
+INSERT INTO `home_application_settings` VALUES ('4', 'server_account', 'root', '账户权限', '1');
+INSERT INTO `home_application_settings` VALUES ('5', 'ftpadress', '10.230.46.164', 'ftp地址', '0');
+INSERT INTO `home_application_settings` VALUES ('6', 'ftpaccount', 'blueking', 'ftp账号', '0');
+INSERT INTO `home_application_settings` VALUES ('7', 'ftp_password', 'blueking', 'ftp密码', '0');
+INSERT INTO `home_application_settings` VALUES ('8', 'file_dest', '/opt/', null, '0');
+INSERT INTO `home_application_settings` VALUES ('9', 'default_agent_mysql_user', 'root', '连接mysql执行sql的默认用户', '1');
+INSERT INTO `home_application_settings` VALUES ('10', 'ftp_user', 'blueking', 'blueking', '0');
+INSERT INTO `home_application_settings` VALUES ('11', 'ftp_ip', '10.230.46.164', '', '1');
+INSERT INTO `home_application_settings` VALUES ('12', 'ftp_os_user', 'appman', 'ftp操作系统用户名', '0');
+INSERT INTO `home_application_settings` VALUES ('13', 'ftp_os_password', 'appman', 'ftp操作系统账号密码', '1');
+INSERT INTO `home_application_settings` VALUES ('14', 'oracle_directory', '/opt/dump_dir', 'oracle导数据路径', '1');

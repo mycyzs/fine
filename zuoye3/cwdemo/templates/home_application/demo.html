@@ -1,0 +1,10 @@
+<%inherit file="/base.html"/>
+<%block name="content">
+    <div>选择业务：<select id="biz_sel"></select></div>
+    <div>选择主机：<select id="ip_sel"></select></div>
+    <div>脚本内容：<textarea id="script"></textarea></div>
+    <button id="get_data">执行脚本</button>
+    <div>执行结果：<textarea id="res"></textarea></div>
+</%block>
+<script src="${STATIC_URL}js/test.js" type="text/javascript"></script>
+

@@ -1,0 +1,57 @@
+<div class="my-tittle"><span>{{ tittle }}</span></div>
+
+<div class="add-task">
+    <div class="add-task1">
+        <div class="my-div"><span class="my-font">任务名称:</span></div>
+        <div class="task-div div-left"><input type="text" ng-model="args.task_name" class="wid-hei" input-hint="任务名称"></div>
+    </div>
+     <div class="add-task1 add-task">
+         <div class="my-div"><span class="my-font">执行类型:</span></div>
+        <div class="task-div div-left my-height"><input type="radio" value="now" class="my-verb" ng-model="args.execute_type" name="execute"><span>立即执行</span><input type="radio" ng-model="args.execute_type" value="time" class="div-left my-verb" style="margin-left: 20px" name="execute"><span>定时</span></div>
+    </div>
+    <div class="add-task1 add-task">
+        <div class="my-div"><span class="my-font">报告邮箱:</span></div>
+        <div class="task-div div-left"><input type="text" ng-model="args.email" class="wid-hei" input-hint="邮箱"></div>
+    </div>
+    <div class="add-task1 add-task">
+        <div class="my-div"><span class="my-font">执行平台:</span></div>
+        <div class="task-div div-left"><input type="text" ng-model="args.platform" class="wid-hei" input-hint="平台"></div>
+    </div>
+    <div class="add-task1 add-task">
+        <div class="my-div"><span class="my-font">选择业务:</span></div>
+        <div class="task-div div-left">
+            <select ng-model="biz_id" ng-options="i.id as i.name for i in biz_list" class="wid-hei task-div">
+
+            </select>
+        </div>
+    </div>
+    <div class="add-task1 add-task">
+        <div class="task-div my-left">
+            <button class="btn btn-sm btn-deppon-primary my-host" ng-click="add_host()">
+                 选择主机
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="my-table">
+    <table>
+        <tbody>
+            <tr ng-repeat="ip in ip_list" class="my-tr">
+                <th class="my-th">{{ ip.ip }}</th>
+                <th class="my-th"><button ng-click="delete(ip.id)">删除</button></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="add-task my-center">
+    <button ng-click="confirm()">
+        确认
+    </button>
+    <button class="div-left" ng-click="cancel()">
+        取消
+    </button>
+</div>
+

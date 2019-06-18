@@ -1,0 +1,25 @@
+<div style="width:90%;margin: 0 auto;height: 100%;overflow-y: auto;padding:10px 10%;">
+    <div style="width: 100%;height: 30%">
+        <div style="width: 40%; float: left">
+            <div>
+                <label>课程名称:</label>
+                <label>{{ content_detail.title }}</label>
+            </div>
+            <div>
+                <label>备注:</label>
+                <label>{{ content_detail.tip }}</label>
+            </div>
+        </div>
+        <div style="width: 55%;height:100%;float: right; align-content: center">
+            <img src="{{ content_detail.image_base64 }}" style="width: 100%;height: 100%">
+        </div>
+    </div>
+    <div>
+        <label>课程名称</label>
+        <input ng-model="filter_args.title">
+        <button class="btn btn-sm" ng-click="searchCourseList()">查询</button>
+        <button class="btn btn-sm" ng-click="add()">添加</button>
+        <div cw-adaptbody="220" ng-grid="gridOption" style="width:100%;overflow-y: hidden"></div>
+    </div>
+
+</div>

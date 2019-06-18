@@ -1,0 +1,14 @@
+<div style="width:90%;margin: 0 auto;height: 100%;overflow-y: auto;padding:10px 10%;">
+    <div>
+        <label>业务ID</label>
+        <select style="width: 50px;" ng-options="i.bk_biz_id as i.bk_biz_name for i in biz_list" ng-model="args.bk_biz_id"></select style="width: 50px;">
+        <label>课程名称</label>
+        <input ng-model="filter_args.title">
+        <button class="btn btn-sm" ng-click="searchReport()">查询</button>
+    </div>
+    <div>
+        <div ng-repeat="i in chart_list">
+            <div highcharts="i.chart" class="col-sm-6" style="height: 50%"></div>
+        </div>
+    </div>
+</div>

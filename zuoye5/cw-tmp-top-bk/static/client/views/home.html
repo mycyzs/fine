@@ -1,0 +1,38 @@
+<div style="width: 100%; height: 100%;padding: 5px">
+
+    <div style="width: 600px;height: 200px;margin-left: 30%;position: relative">
+        <div class="my-div" ng-repeat="b in books" style="width: 100%;left: 0;top: 0;position: absolute;height: 100%">
+            <div style="float: left;background: #8080801a;width: 16%;height: 100%;left: 0;top: 0;position: absolute">
+                <div style="width: 100%;text-align: center"><p style="font-weight: bold">《{{ b.name }}》</p></div>
+                <p>简介：</p>
+                <p>{{ b.content }}</p>
+            </div>
+            <div style="float: left">
+                <img ng-src="{{ current_url }}get_background_img/?id={{ b.id }}" alt="" style="width: 70%;height: 100%;left: 100px;top: 0;position: absolute">
+            </div>
+        </div>
+
+    </div>
+
+
+    <fieldset class="fieldsetName">
+        <legend style="">查询条件</legend>
+
+        <div class="container-fluid">
+            <div style="float:left;">
+                <label style="float:left;margin-top: 5px;">课程名称：</label>
+                <input type="text" ng-model="args.sys_name" style="width:150px;float:left;"
+                       class="form-control" placeholder="请输入课程名称"/>
+            </div>
+            <div style="float:left;margin-left:15px;">
+                <button ng-click="search_sys_info()" class="btn btn-sm btn-deppon-primary">查询</button>
+            </div>
+
+            <div style="float:left;margin-left:15px;">
+                <button ng-click="add_sys()" class="btn btn-sm btn-deppon-warning">新增</button>
+            </div>
+
+        </div>
+    </fieldset>
+    <div cw-adaptbody="100" ng-grid="gridOption" style="width:100%;overflow-y: auto;overflow-x: hidden;"></div>
+</div>

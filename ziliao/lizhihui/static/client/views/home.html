@@ -1,0 +1,23 @@
+<div style="width:100%;margin: 0 auto;height: 100%;overflow-y: auto;padding:10px 10%;">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align: left">请选择业务：</label>
+            <div class="col-sm-9">
+                <select class="form-control" ng-options="i.bk_biz_id as i.bk_biz_name for i in appList" ng-model="filterObj.appID" ></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" style="text-align: left">请选择主机IP：</label>
+            <div class="col-sm-9">
+                <textarea placeholder="多个IP用换行符分隔" ng-model="filterObj.ip" class="form-control" style="height: 90px !important;"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-7">
+                <button class="btn btn-sm btn-success" style="width:120px;" ng-click="searchHost()">查询</button>
+            </div>
+        </div>
+    </div>
+    <div cw-adaptbody="220" ng-grid="gridOption" style="width:100%;overflow-y: hidden"></div>
+</div>

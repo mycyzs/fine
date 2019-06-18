@@ -1,0 +1,3 @@
+系统名,集群名,实例名,IP,PORT,主从角色,数据库版本,安装目录,参数路径,备份路径,是否只读
+cc,ee,dadada,10.230.46.142,3306,Master,5.7.22-log,/usr/local/mysql-5.7.22-linux-glibc2.12-x86_64/,da,ad,False
+ewew,dadad,sasa,10.230.46.95,3308,Slave,5.7.20-log,/usr/local/mysql-5.7.20-linux-glibc2.12-x86_64/,da,da,False

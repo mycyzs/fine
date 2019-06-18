@@ -1,0 +1,332 @@
+<div style="width:100%;margin: 0 auto;height: 100%;overflow-y: auto;padding:10px 10%;">
+    <div style="width: 100%;height: 50px;">
+        <label class="col-sm-3 control-label" style="text-align: right;">请选择时间：</label>
+        <div class="col-sm-9">
+                <label style="float:left;margin-top: 5px;">开始时间：</label>
+                <!--日期控件-->
+                <input type="text" ng-model="filterObj.start_time" cw-datepicker style="width:150px;float:left;"
+                       class="form-control"/>
+
+                <label style="float:left;margin-top: 5px;margin-left: 10px">结束时间：</label>
+                <!--日期控件-->
+                <input type="text" ng-model="filterObj.end_time" cw-datepicker style="width:150px;float:left;"
+                       class="form-control"/>
+        </div>
+    </div>
+    <div style="margin-top: 20px" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label bk-lh30 pt0">test1</label>
+            <div class="col-sm-7">
+                <input class="form-control" placeholder="xxxxxx" ng-model="model1" style="width: 80%">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">test2</label>
+            <div class="col-sm-7">
+                <select class="form-control" style="width: 80%;"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">test3</label>
+            <div class="col-sm-7">
+                <textarea rows="3" placeholder="输入ip，多个以分号分隔" class="form-control" style="width: 80%"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <button class="col-sm-1 btn btn-sm btn-success" ng-click="search()">查询</button>
+            <button class="col-sm-1 btn btn-sm btn-success" style="margin-left: 10%" ng-click="add()">添加</button>
+            <button class="col-sm-1 btn btn-sm btn-success" style="margin-left: 10%" ng-click="go_to_test2()">TEST2</button>
+        </div>
+    </div>
+    <div cw-adaptbody="220" ng-grid="gridOption" style="width:100%;overflow-y: hidden"></div>
+    <div style="width: 100%;height: 1000px;border: solid;margin-top: 20px">
+        <div cw-piechart="list3" class="col-sm-12"></div>
+        <div highcharts="list1" class="col-sm-6" style="height: 50%"></div>
+        <div highcharts="list2" class="col-sm-6" style="height: 50%"></div>
+    </div>
+</div>
+
+## base content
+<div style="width:80%;overflow-y: auto;padding: 5px;margin: 10px auto"></div>
+
+
+
+## base_controller
+controllers.controller("testCtrl", function ($scope, $modal, errorModal, sysService, loading, confirmModal, msgModal) {});
+
+## base sysService
+loading.open();
+sysService.xxxx({}, {request_data}, function (res) {
+    loading.close();
+    if (res.result) {
+
+    }
+    else {
+        errorModal.open(res.data)
+    }
+})
+
+## base弹窗
+$scope.add = function (params) {
+    var modalInstance = $modal.open({
+        templateUrl: static_url + 'client/views/addTest.html',
+        windowClass: 'task_dialog',
+        controller: 'addTest',
+        backdrop: 'static'，
+        resolve: {
+                objectItem: function () {
+                    return angular.copy(params)
+                }
+            }
+    });
+    modalInstance.result.then(function () {
+        // $scope.searchHost();
+    });
+};
+
+
+controllers.controller("testCtrl", function ($scope, $modal, errorModal, sysService, loading, confirmModal, msgModal) {
+
+    // 表格
+    $scope.PagingData = [];
+
+    $scope.pagingOptions = {
+        pageSizes: [5, 10, 15, 20],
+        pageSize: "10",
+        currentPage: 1
+    };
+
+    $scope.data = [
+        {'col1': '张三', 'col2': 30},
+        {'col1': '张四', 'col2': 30},
+        {'col1': '张五', 'col2': 30},
+    ];
+
+    // $scope.searchObj = function () {
+    //     sysService.get_host_mes({}, {bk_biz_id:$scope.bk_biz_id,ip_strs:$scope.ip_strs}, function (res) {
+    //         if (res.result) {
+    //             $scope.objList = res.data;
+    //             $scope.pagingOptions.currentPage = 1;
+    //             $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+    //         }
+    //         else {
+    //             errorModal.open(res.data.split(";"));
+    //         }
+    //     })
+    // };
+
+    $scope.getPagedDataAsync = function (pageSize, page) {
+        $scope.setPagingData($scope.objList ? $scope.objList : [], pageSize, page);
+    };
+
+    $scope.setPagingData = function (data, pageSize, page) {
+        $scope.PagingData = data.slice((page - 1) * pageSize, page * pageSize);
+        $scope.totalSerItems = data.length;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    };
+
+    $scope.$watch('pagingOptions', function (newVal, oldVal) {
+        $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+    }, true);
+
+    $scope.gridOption = {
+        data: 'data',
+        enablePaging: true,
+        showFooter: true,
+        pagingOptions: $scope.pagingOptions,
+        totalServerItems: 'totalSerItems',
+        columnDefs: [
+            {field: 'col1', displayName: '列表1'},
+            {field: 'col2', displayName: '列表2'},
+            {displayName:'操作',
+            cellTemplate: '<div style="width:100%;text-align: center;padding-top: 5px;">' +
+                '<span  ng-click="searchUsageInfo(row.entity)" style="cursor: pointer">查询</span>&emsp;' +
+                '<span  ng-click="disable_get(row.entity)" style="cursor: pointer">移除</span>' +
+                '</div>'}
+        ]
+    }
+
+    //饼图
+    $scope.searchData3 = function () {
+        sysService.search_data3({},{},function (res) {
+
+        })
+    };
+
+    $scope.data3 = [
+        {name:'大学生',y:10},
+        {name:'中学生',y:10},
+        {name:'小学生',y:10}
+    ];
+    $scope.list3 = {
+        data: "data3",
+        title: {text:"学生占比", enable: true},
+        unit:"个",
+        size: "300px"
+    };
+
+    //折线图
+    $scope.list2 = {
+        data: "data2",
+        chart: {type: 'line'},//数据列类型，支持 area, areaspline, bar, column, line, pie, scatter or spline
+        title: {text: '折线图示例', enable:true},
+        xAxis: {
+            categories: []
+        },
+        //提示框位置和显示内容
+        tooltip: {
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:f}</b></td></tr>',
+            headerFormat: ""
+        }
+    };
+    $scope.data2 = [
+                    {'data': [0, 0, 0, 0, 0, 0, 0, 0, 0, 58, 32, 5], 'name': '本月巡检次数'},
+                    {'data': [0, 39, 0, 5, 0, 5, 0, 2, 0, 58, 32, 5], 'name': '本月巡检次数'}
+                    ];
+    $scope.list2.xAxis.categories = ['9月', '10月', '11月', '12月', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月'];
+
+    $scope.searchData2 = function () {
+        sysService.search_data2({},{},function (res) {
+            // res = {'result': True, 'data':{'data_mes':[],'categories_mes': []}}
+            if (res.result){
+                $scope.data2 = res.data.data_mes;
+                $scope.list2.xAxis.categories = res.data.categories_mes
+
+            }
+        })
+    };
+
+    // 柱状图
+    $scope.list1 = {
+        data: "data1",
+        chart: {type: "column"},
+        title: {"text": "主机资源", enable: true},
+        plotOptions: {column: {groupPadding: 0}},
+        yAxis: {
+            title: {text: '数目'}, //y轴标题
+            lineWidth: 2 //基线宽度1
+            //tickPositions: [0, 1, 2, 3, 4]
+        },
+        tooltip: {
+            headerFormat: '<table\>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:f} 台</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true,
+            positioner: function () {
+                return {x: 80, y: 80}
+            }
+        }
+    };
+
+    $scope.data1 = [
+        {name: "windows", data: [2,3,5]},
+        {name: "linux", data: [3,0,4]},
+        {name: "macs", data: [5,5,1]}
+    ]
+
+    // 弹窗
+
+
+    // 确认弹窗
+    $scope.enable_get = function (rowEntity) {
+        confirmModal.open({
+            text: '是否加入周期检查列表？',
+            confirmClick: function () {
+                loading.open();
+                sysService.add_to_celery_list({}, rowEntity, function (res) {
+                    loading.close();
+                    if (res.result) {
+                        msgModal.open("success", "添加成功");
+                        rowEntity.is_add = true;
+                    }
+                })
+            }
+        })
+    };
+
+    $scope.disable_get = function (rowEntity) {
+        confirmModal.open({
+            text: '是否从周期检查列表移除？',
+            confirmClick: function () {
+                loading.open();
+                sysService.remove_for_celery_list({}, rowEntity, function (res) {
+                    loading.close();
+                    if (res.result) {
+                        msgModal.open("success", "移除成功");
+                        rowEntity.is_add = false;
+                    }
+                })
+            }
+        })
+    };
+
+
+    /* 跳转到别的页面*/
+    $scope.go_to_test2 = function (rowEntity) {
+        // window.location.href = "#/hostInfo?server_id=" + rowEntity.id;
+        window.location.href = '#/test2'
+    };
+
+});
+
+controllers.controller("addTest", function ($scope, $modal, $modalInstance, errorModal, sysService, loading, confirmModal, msgModal) {
+    $scope.appList = [];
+    $scope.serverList = [];
+    $scope.all_data = {
+        app:{},
+        host:{}
+    };
+
+    $scope.init = function () {
+        loading.open();
+        sysService.get_app_list({}, {}, function (res) {
+            loading.close();
+            $scope.appList = res.data;
+            $scope.all_data.app = $scope.appList[0];
+            $scope.searchHost()
+        })
+    };
+
+    // $scope.init();
+
+    $scope.searchHost = function () {
+        loading.open();
+        sysService.search_server_by_filter({}, $scope.all_data.app, function (res) {
+            loading.close();
+            if (res.result) {
+                $scope.serverList = res.data;
+                $scope.all_data.host = $scope.serverList[0];
+            }
+        })
+    };
+
+    $scope.confirm = function () {
+        confirmModal.open({
+            text: "是否添加这个主机？",
+            confirmClick: function () {
+                loading.open();
+                sysService.add_to_host_list({}, $scope.all_data, function (res) {
+                    loading.close();
+                    if (res.result) {
+                        msgModal.open("success", "添加成功");
+                        $modalInstance.close();
+
+                    }
+                    else {
+                        errorModal.open(res.data)
+                    }
+                })
+            }
+        })
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss("cancel")
+    }
+});
